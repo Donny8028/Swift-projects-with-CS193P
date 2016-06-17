@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Dropit View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DropitViewController" customModule="Dropit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5m-Fs-puq" customClass="BezierPathView" customModule="Dropit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4gn-2K-rG1" appends="YES" id="YUL-IX-2hj"/>
+                                    <outletCollection property="gestureRecognizers" destination="BkP-iH-YhC" appends="YES" id="gz9-LB-UF0"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O5m-Fs-puq" secondAttribute="trailing" id="A1I-za-HMU"/>
+                            <constraint firstItem="O5m-Fs-puq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bYO-XG-j3z"/>
+                            <constraint firstItem="O5m-Fs-puq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="spq-5u-b0v"/>
+                            <constraint firstItem="O5m-Fs-puq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vAR-g6-tow"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="O5m-Fs-puq" id="v5L-He-U2s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4gn-2K-rG1">
+                    <connections>
+                        <action selector="drop:" destination="BYZ-38-t0r" id="fLd-hv-b12"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BkP-iH-YhC">
+                    <connections>
+                        <action selector="panAttach:" destination="BYZ-38-t0r" id="iNJ-VA-r8a"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="325" y="400"/>
+        </scene>
+    </scenes>
+</document>
